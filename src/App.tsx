@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <button onClick={myfunction} />
+        <button className="w3-button w3-blue" onClick={myfunction}>Click Me!</button>
       </header>
     </div>
   );
