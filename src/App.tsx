@@ -17,9 +17,7 @@ function App() {
   };
 
   const sendDataToReactNativeApp = async () => {
-    //const window: any;
-        window.ReactNativeWebView.postMessage('Data from WebView / Website');
-
+    window.ReactNativeWebView.postMessage('Data from WebView / Website');
   };
 
   return (
