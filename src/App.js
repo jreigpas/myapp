@@ -2,6 +2,15 @@
 import "./App.css";
 import { useState } from "react";
 
+window.changeText = function(url) {
+  console.log('llega 1');
+  alert('valor');
+  if(window.callback != undefined) {
+    console.log('llega 2');
+  }
+};
+
+
 function App() {
 
   const [mensaje, setMensaje] = useState("sin mensaje");
