@@ -2,13 +2,11 @@
 import "./App.css";
 import { useState } from "react";
 
-window.changeText = function(url) {
-  console.log('llega 1');
-  alert('valor');
-  if(window.callback != undefined) {
-    console.log('llega 2');
-  }
-};
+// window.changeText = function(url) {
+//   console.log('llega 1');
+//   alert('valor');
+
+// };
 
 
 function App() {
@@ -21,11 +19,19 @@ function App() {
 
   }
 
-  const changeText = (msg ) => { // eslint-disable-line
-    console.log('llega 1q');
-    setMensaje(msg);
+//   const changeText = (msg ) => { // eslint-disable-line
+//     console.log('llega 1q');
+//     setMensaje(msg);
 
-}
+// }
+
+    window.changeText = function(msg) {
+      console.log('llega 1');
+      setMensaje(msg);
+      alert('valor');
+
+    };
+
 
   return (
     <div className="App">
