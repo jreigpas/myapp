@@ -1,18 +1,11 @@
 import "./App.css";
 import { useState } from "react";
 
-interface WebAppInterface {
-  getFromAndroid(toast: string): any;
-}
-
 function App() {
   const [mensaje, setMensaje] = useState("sin mensaje");
-  //let Android: any;
 
   const getFromAndroid = () => {
-    //if (android){
         window.Android.getFromAndroid("informacion desde React");
-    //}
   };
 
   window.changeText = function (msg: string) {
