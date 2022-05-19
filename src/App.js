@@ -39,8 +39,8 @@ function App() {
   const getFromAndroid = () => { // eslint-disable-line
 
 
-      const myVar = Android.getFromAndroid(); // eslint-disable-line
-      alert(myVar);
+      const myVar = Android.getFromAndroid("informacion desde React"); // eslint-disable-line
+      //alert(myVar);
 
   }
 
