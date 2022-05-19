@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React, { useRef } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { nativeAlert, nativeConfirm } from "@tef-novum/webview-bridge";
 
 function App() {
-  let window: any;
+  let window;
   const myfunction = () => {
     nativeAlert({
       message: "Purchase completed!",
@@ -35,6 +36,14 @@ function App() {
 
   }
 
+  const getFromAndroid = () => { // eslint-disable-line
+
+
+      const myVar = Android.getFromAndroid(); // eslint-disable-line
+      alert(myVar);
+
+  }
+
 
   return (
     <div className="App">
@@ -54,6 +63,16 @@ function App() {
         >
           Click Me!3
         </button>
+        <button
+          className="w3-button w3-blue"
+          onClick={getFromAndroid} // eslint-disable-line
+        >
+          from Android
+        </button>
+
+
+
+
       </header>
     </div>
   );
