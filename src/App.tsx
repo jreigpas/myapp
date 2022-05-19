@@ -1,17 +1,21 @@
-/* eslint-disable */
 import "./App.css";
 import { useState } from "react";
 
+interface WebAppInterface {
+  getFromAndroid(toast: string): any;
+}
+
 function App() {
   const [mensaje, setMensaje] = useState("sin mensaje");
+  let android: WebAppInterface;
 
   const getFromAndroid = () => {
-    // eslint-disable-line
-
-    const myVar = Android.getFromAndroid("informacion desde React"); // eslint-disable-line
+    if (android){
+        android.getFromAndroid("informacion desde React");
+    }
   };
 
-  window.changeText = function (msg) {
+  window.changeText = function (msg: string) {
     console.log("llega 1");
     setMensaje(msg);
     alert("valor");
@@ -24,7 +28,7 @@ function App() {
 
         <button
           className="w3-button w3-blue"
-          onClick={getFromAndroid} // eslint-disable-line
+          onClick={getFromAndroid}
         >
           from React
         </button>
