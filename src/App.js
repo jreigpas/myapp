@@ -22,7 +22,7 @@ function App() {
   }
 
   const changeText = (msg ) => { // eslint-disable-line
-
+    console.log('llega 1q');
     setMensaje(msg);
 
 }
