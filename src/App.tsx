@@ -7,11 +7,11 @@ interface WebAppInterface {
 
 function App() {
   const [mensaje, setMensaje] = useState("sin mensaje");
-  let android: any;
+  let Android: WebAppInterface;
 
   const getFromAndroid = () => {
     //if (android){
-        android.getFromAndroid("informacion desde React");
+        Android.getFromAndroid("informacion desde React");
     //}
   };
 
