@@ -2,11 +2,19 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  const [mensaje, setMensaje] = useState("sin mensaje");
+  const [mensaje, setMensaje] = useState("--");
+  const [mensajeEnviar, setMensajeEnviar] = useState("sin mensaje");
 
   const getFromAndroid = () => {
-        window.Android.getFromAndroid("informacion desde React");
+      console.log('llega a mensaje enviar '+ mensajeEnviar);
+      window.Android.getFromAndroid(mensajeEnviar);
   };
+
+  const handleInputChange = (event: any) => {
+    console.log('valor:'+event.target.value);
+    setMensajeEnviar(event.target.value);
+  };
+
 
   window.changeText = function (msg: string) {
     console.log("llega 1");
@@ -17,14 +25,16 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>este es el mensaje: {mensaje}</p>
-
-        <button
-          className="w3-button w3-blue"
-          onClick={getFromAndroid}
-        >
-          from React
+        <p>este es el mensaje a recibir: {mensaje}</p>
+        <form onSubmit={getFromAndroid}>
+        <label>
+          A enviar:
+          <input type="text" name="mensajeEnviar" onChange={handleInputChange} />
+        </label>
+        <button type="submit" className="w3-button w3-blue">
+          Enviar a Android
         </button>
+        </form>
       </header>
     </div>
   );
