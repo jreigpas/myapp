@@ -25,7 +25,7 @@ const Home: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <img src={logo} /> */}
+        <img src={logo} alt="ejemplo"/>
         <p>{process.env.PUBLIC_URL}</p>
         <p>este es el mensaje a recibir: {mensaje}</p>
         <form onSubmit={getFromReact}>
