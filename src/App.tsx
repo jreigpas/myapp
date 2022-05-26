@@ -1,6 +1,8 @@
 import "./App.css";
 import { useState } from "react";
-import logo from './imagenO2.jpg';
+import Home from "./components/Home/Home";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Dashboard from "./components/dashboard/Dashboard";
 
 
 function App() {
@@ -25,21 +27,15 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-      <img src={logo} />
-        <p>este es el mensaje a recibir: {mensaje}</p>
-        <form onSubmit={getFromReact}>
-        <label>
-          A enviar:
-          <input type="text" name="mensajeEnviar" onChange={handleInputChange} />
-        </label>
-        <button type="submit" className="w3-button w3-blue">
-          Enviar a Android
-        </button>
-        </form>
-      </header>
-    </div>
+<BrowserRouter>
+    <Routes>
+      <Route index element={<Home />} />
+      <Route path="/" element={<Home />} />
+      <Route path="myApp/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Home />} />
+    </Routes>
+    </BrowserRouter>
+
   );
 }
 
