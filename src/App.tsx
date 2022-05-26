@@ -5,9 +5,9 @@ function App() {
   const [mensaje, setMensaje] = useState("--");
   const [mensajeEnviar, setMensajeEnviar] = useState("sin mensaje");
 
-  const getFromAndroid = () => {
+  const getFromReact = () => {
       console.log('llega a mensaje enviar '+ mensajeEnviar);
-      window.Android.getFromAndroid(mensajeEnviar);
+      window.Native.getFromReact(mensajeEnviar);
   };
 
   const handleInputChange = (event: any) => {
@@ -16,7 +16,7 @@ function App() {
   };
 
 
-  window.changeText = function (msg: string) {
+  window.getFromNative = function (msg: string) {
     console.log("llega 1");
     setMensaje(msg);
     alert("valor");
@@ -26,7 +26,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>este es el mensaje a recibir: {mensaje}</p>
-        <form onSubmit={getFromAndroid}>
+        <form onSubmit={getFromReact}>
         <label>
           A enviar:
           <input type="text" name="mensajeEnviar" onChange={handleInputChange} />
