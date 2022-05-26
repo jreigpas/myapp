@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState } from "react";
+import logo from './imagenO2.jpg';
+
 
 function App() {
   const [mensaje, setMensaje] = useState("--");
@@ -25,6 +27,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+      <img src={logo} />
         <p>este es el mensaje a recibir: {mensaje}</p>
         <form onSubmit={getFromReact}>
         <label>
