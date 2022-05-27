@@ -2,21 +2,20 @@ import "./App.css";
 import Home from "./components/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "./components/dashboard/Dashboard";
-
+import Nofound from "./components/nofound/Nofound";
+import Layout from "./components/layout/Layout";
 
 function App() {
-
-
   return (
-<BrowserRouter>
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="/" element={<Home />} />
-      <Route path="dashboard" element={<Dashboard />} />
-      <Route path="*" element={<Home />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="*" element={<Nofound />} />
+        </Route>
+      </Routes>
     </BrowserRouter>
-
   );
 }
 
