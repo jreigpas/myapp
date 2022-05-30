@@ -2,7 +2,8 @@ export {};
 
 declare global {
   interface Window {
-    getFromNative: any;
-    Native: any;
+    changeText: any;
+    Android: any;
+    webkit: any;
   }
 }
