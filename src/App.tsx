@@ -1,10 +1,11 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { isAndroid, isIOS } from "react-device-detect";
 
 function App() {
   const [mensaje, setMensaje] = useState("--");
   const [mensajeEnviar, setMensajeEnviar] = useState("sin mensaje");
+  const [userAgent, setuserAgent] = useState("");
 
   const getFromAndroid = (event : any) => {
     event.preventDefault();
@@ -23,6 +24,9 @@ function App() {
     setMensajeEnviar(event.target.value);
   };
 
+  useEffect(() => {
+    setuserAgent(window.navigator.userAgent);
+  }, []);
 
   window.changeText = function (msg: string) {
     console.log("llega 1");
@@ -34,6 +38,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>este es el mensaje a recibir: {mensaje}</p>
+        <p>{userAgent}</p>
         <form onSubmit={getFromAndroid}>
         <label>
           A enviar:
