@@ -6,7 +6,7 @@ function App() {
   const [mensaje, setMensaje] = useState("--");
   const [mensajeEnviar, setMensajeEnviar] = useState("sin mensaje");
   const [userAgent, setuserAgent] = useState("");
-  const [myItemStorage, setMyItemStorage] = useState("");
+  const [myItemStorage, setMyItemStorage] = useState(localStorage.getItem('micolor'));
 
   const getFromAndroid = (event : any) => {
     event.preventDefault();
