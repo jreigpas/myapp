@@ -6,6 +6,7 @@ function App() {
   const [mensaje, setMensaje] = useState("--");
   const [mensajeEnviar, setMensajeEnviar] = useState("sin mensaje");
   const [userAgent, setuserAgent] = useState("");
+  const [myItemStorage, setMyItemStorage] = useState("");
 
   const getFromAndroid = (event : any) => {
     event.preventDefault();
@@ -22,10 +23,12 @@ function App() {
   const handleInputChange = (event: any) => {
     console.log('valor:'+event.target.value);
     setMensajeEnviar(event.target.value);
+    setMyItemStorage(localStorage.getItem('micolor') || '');
   };
 
   useEffect(() => {
     setuserAgent(window.navigator.userAgent);
+    localStorage.setItem('micolor', 'red');
   }, []);
 
   window.changeText = function (msg: string) {
@@ -38,7 +41,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>este es el mensaje a recibir: {mensaje}</p>
-        <p>{userAgent}</p>
+        <p>valor del storage:{myItemStorage}</p>
+        {/* <p>{userAgent}</p> */}
         <form onSubmit={getFromAndroid}>
         <label>
           A enviar:
