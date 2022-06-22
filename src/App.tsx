@@ -11,6 +11,8 @@ function App() {
   const getFromAndroid = (event : any) => {
     event.preventDefault();
     console.log('llega a mensaje enviar '+ mensajeEnviar);
+    localStorage.setItem('micolor', mensajeEnviar);
+    setMyItemStorage(localStorage.getItem('micolor') || '');
     if (isAndroid) {
       window.Android.getFromAndroid(mensajeEnviar);
     } else if (isIOS) {
@@ -23,8 +25,8 @@ function App() {
   const handleInputChange = (event: any) => {
     console.log('valor:'+event.target.value);
     setMensajeEnviar(event.target.value);
-    localStorage.setItem('micolor', 'red');
-    setMyItemStorage(localStorage.getItem('micolor') || '');
+    // localStorage.setItem('micolor', 'red');
+    // setMyItemStorage(localStorage.getItem('micolor') || '');
   };
 
   useEffect(() => {
@@ -42,7 +44,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <p>este es el mensaje a recibir: {mensaje}</p>
-        <p>valor del storage:{myItemStorage}</p>
+        <p>valor del storage:{localStorage.getItem('micolor')}</p>
         {/* <p>{userAgent}</p> */}
         <form onSubmit={getFromAndroid}>
         <label>
