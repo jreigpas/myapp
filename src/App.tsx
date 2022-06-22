@@ -23,12 +23,13 @@ function App() {
   const handleInputChange = (event: any) => {
     console.log('valor:'+event.target.value);
     setMensajeEnviar(event.target.value);
+    localStorage.setItem('micolor', 'red');
     setMyItemStorage(localStorage.getItem('micolor') || '');
   };
 
   useEffect(() => {
     setuserAgent(window.navigator.userAgent);
-    localStorage.setItem('micolor', 'red');
+    //localStorage.setItem('micolor', 'red');
   }, []);
 
   window.changeText = function (msg: string) {
