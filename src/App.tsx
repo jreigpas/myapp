@@ -1,6 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { isAndroid, isIOS } from "react-device-detect";
+import { isWebViewBridgeAvailable, nativeAlert } from "@tef-novum/webview-bridge";
 
 function App() {
   const [mensaje, setMensaje] = useState("--");
@@ -39,6 +40,12 @@ function App() {
     setMensaje(msg);
     alert("valor");
   };
+
+  if (isWebViewBridgeAvailable()) {
+    nativeAlert({message: 'mensaje',title: 'titulo',buttonText: 'texto del boton'}); // use bridge
+  } else {
+    alert('Hello2'); // use alternative implementation
+  }
 
   return (
     <div className="App">
