@@ -59,7 +59,7 @@ function App() {
           <input type="text" name="mensajeEnviar" onChange={handleInputChange} />
         </label>
         <button type="submit" className="w3-button w3-blue">
-          Enviar a Android
+          Enviar a Androidd
         </button>
         </form>
       </header>
