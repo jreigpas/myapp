@@ -3,7 +3,7 @@ export {};
 declare global {
   interface Window {
     changeText: any;
-    Android: any;
+    tuentiWebView: any;
     webkit: any;
   }
 }

@@ -15,7 +15,7 @@ function App() {
     localStorage.setItem('micolor', mensajeEnviar);
     setMyItemStorage(localStorage.getItem('micolor') || '');
     if (isAndroid) {
-      window.Android.getFromAndroid(mensajeEnviar);
+      window.tuentiWebView.postMessage(mensajeEnviar);
     } else if (isIOS) {
       window.webkit.messageHandlers.jsMessageHandler.postMessage(mensajeEnviar);
     } else {
